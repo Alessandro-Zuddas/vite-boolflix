@@ -1,0 +1,13 @@
+/*------------------------
+         IMPORT 
+------------------------*/
+
+@import "variables.scss";
+@import "reset.scss";
+@import "layout.scss";
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
+@import "/node_modules/bootstrap/scss/bootstrap.scss";
+
+body {
+  font-family: "Lato", sans-serif;
+}
