@@ -1,34 +1,29 @@
 <script>
 
-import axios from "axios";
 import { store } from "../store.js"
-import ProductCard from './ProductCard.vue';
+import MoviesSection from './MoviesSection.vue';
+import SeriesSection from './SeriesSection.vue';
 
 export default {
 
     name: "AppMain",
+
     components: {
-        ProductCard,
+        MoviesSection,
+        SeriesSection,
     },
     data() {
         return {
         store,
         }
-    },
-    created(){
-        console.log(store);
-        console.log("Siamo al main");
     }
 }
 </script>
 
 <template>
 
-    <div class="container-fluid d-flex px-3 py-3">
-
-        <ProductCard />
-
-    </div>
+    <MoviesSection class="mt-3" />
+    <SeriesSection class="mt-3" />
 
 </template>
 
