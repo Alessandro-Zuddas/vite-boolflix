@@ -1,6 +1,5 @@
 <script>
 
-import { store } from "../store.js"
 import MoviesSection from './MoviesSection.vue';
 import SeriesSection from './SeriesSection.vue';
 
@@ -14,7 +13,7 @@ export default {
     },
     data() {
         return {
-        store,
+
         }
     }
 }
@@ -22,8 +21,13 @@ export default {
 
 <template>
 
-    <MoviesSection class="mt-3" />
-    <SeriesSection class="mt-3" />
+    <section class="mt-3">
+        <MoviesSection/>
+    </section>
+    
+    <section class="mt-3">
+        <SeriesSection/>
+    </section>
 
 </template>
 

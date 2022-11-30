@@ -1,18 +1,18 @@
 <script>
 
 import { store } from "../store.js"
-import ProductCard from './ProductCard.vue';
+import MovieCard from './MovieCard.vue';
 
 export default {
 
     name: "MoviesSection",
 
     components: {
-        ProductCard,
+        MovieCard,
     },
     data() {
         return {
-        store,
+            store,
         }
     },
 }
@@ -26,7 +26,8 @@ export default {
 
     <div class="container-fluid d-flex px-3">
 
-        <ProductCard />   
+        <MovieCard v-for="movie in this.store.movies"
+            :movieInfo = movie />
 
     </div>
 

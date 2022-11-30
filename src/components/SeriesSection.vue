@@ -1,14 +1,14 @@
 <script>
 
 import { store } from "../store.js"
-import ProductCard from './ProductCard.vue';
+import SeriesCard from './SeriesCard.vue';
 
 export default {
 
     name: "SeriesSection",
 
     components: {
-        ProductCard,
+        SeriesCard,
     },
     data() {
         return {
@@ -26,7 +26,7 @@ export default {
 
     <div class="container-fluid d-flex px-3">
 
-        <ProductCard />   
+          
 
     </div>
 
