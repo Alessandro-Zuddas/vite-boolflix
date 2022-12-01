@@ -19,17 +19,17 @@ export default {
   },
   created(){
     // Richiesta di default all'accesso
-    this.defaultRequest("movie");
-    this.defaultRequest("tv");
+    this.searchRequest("movie", "A");
+    this.searchRequest("tv", "A");
   },
   methods: {
 
     // Richiesta di default all'accesso
-    defaultRequest(typology){
+    searchRequest(typology, searchedText){
       axios.get(`https://api.themoviedb.org/3/search/${typology}`, {
         params: {
           api_key: "f953ac7a9eee11eda0fa8ec1090e96f2",
-          query: `A`,
+          query: searchedText,
           language: "it-IT"
         }
       }).then(result => {
@@ -46,15 +46,21 @@ export default {
           
         }
       })
-    }
+    },
 
+    // Richiesta all input dell'utente
+    onSearch(){
+      // Richiesta per Film e Serie TV con dati inseriti dall'utente
+      this.searchRequest("movie", `${this.store.searchText}`);
+      this.searchRequest("tv", `${this.store.searchText}`);
+    }
   }
 }
 </script>
 
 <template>
   <div>
-    <AppHeader/>
+    <AppHeader @onSearch="onSearch()"/>
     <AppMain />
   </div>
 </template>

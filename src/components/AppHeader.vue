@@ -22,10 +22,10 @@ export default {
     <!-- /Logo Boolflix -->
 
     <!-- Search bar -->
-    <div class="d-flex">
-      <button type="button">Cerca</button>
-      <input type="text" v-model="store.searchText">
-    </div>
+    <form class="d-flex" @submit.prevent="$emit(`onSearch`)">
+      <button type="submit">Cerca</button>
+      <input type="text" v-model="store.searchText" required>
+    </form>
     <!-- /Search bar -->
   </div>
 

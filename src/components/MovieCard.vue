@@ -41,7 +41,7 @@ export default {
 <style scoped>
 
 ul{
-    width: calc(100% / 5 - .9375rem);
+    width: calc(100% / 6 - .9375rem);
     margin: .9375rem .1875rem;  
     padding: 0;
     list-style: none;

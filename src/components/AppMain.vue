@@ -36,7 +36,7 @@ export default {
 <style scoped>
 
 h3{
-    padding-left: 2.1875rem;
+    padding-left: 3.125rem;
 }
 
 </style>
