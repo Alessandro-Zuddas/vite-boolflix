@@ -20,8 +20,8 @@ export default {
 
 <template>
 
-    <div class="px-3">
-        <h3 class="py-2">Titolo sezione</h3>
+    <div class="px-4">
+        <h3 class="py-2">Film</h3>
     </div>
 
     <div class="container-fluid d-flex px-3">
@@ -35,6 +35,9 @@ export default {
 
 <style scoped>
 
-
+.container-fluid{
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
 
 </style>

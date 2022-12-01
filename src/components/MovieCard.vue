@@ -6,13 +6,13 @@ export default {
 
     name: "MovieCard",
 
+    props:{
+        movieInfo: Object
+    },
+
     data() {
         return {
             store,
-
-            props:{
-                movieInfo: Object
-            }
         }
     },
     created(){
@@ -23,7 +23,7 @@ export default {
 
 <template>
 
-    <ul class="px-4">
+    <ul>
         <li>{{ movieInfo.title }}</li>
         <li>{{ movieInfo.original_title }}</li>
         <li>{{ movieInfo.original_language }}</li>
@@ -34,6 +34,10 @@ export default {
 
 <style scoped>
 
-
+ul{
+    width: calc(100% / 6 - 1.875rem);
+    margin: .3125rem .3125rem;
+    border: .0625rem solid black;
+}
 
 </style>
