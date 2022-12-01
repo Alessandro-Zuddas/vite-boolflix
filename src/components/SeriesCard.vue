@@ -15,6 +15,11 @@ export default {
             store,
         }
     },
+    computed: {
+        voteParser(){
+            /* Da implementare */
+        }
+    },
     created(){
 
     }
@@ -28,7 +33,7 @@ export default {
         <li class="d-none">{{ showInfo.name}}</li>
         <li class="d-none">{{ showInfo.original_name }}</li>
         <li class="d-none">{{ showInfo.original_language }}</li>
-        <li class="d-none">{{ showInfo.vote_average }}</li>
+        <li class="d-none">{{ showInfo.vote_average /* Passare a voteParaser per formattare */ }}</li>
     </ul>
 
 </template>
@@ -38,7 +43,7 @@ export default {
 
 ul{
     width: calc(100% / 5 - .9375rem);
-    margin: .3125rem .1875rem;  
+    margin: .9375rem .1875rem;  
     padding: 0;
     list-style: none;
 }

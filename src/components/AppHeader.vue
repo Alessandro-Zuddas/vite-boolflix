@@ -22,10 +22,10 @@ export default {
     <!-- /Logo Boolflix -->
 
     <!-- Search bar -->
-    <form class="d-flex">
+    <div class="d-flex">
       <button type="button">Cerca</button>
       <input type="text" v-model="store.searchText">
-    </form>
+    </div>
     <!-- /Search bar -->
   </div>
 

@@ -15,6 +15,11 @@ export default {
             store,
         }
     },
+    computed: {
+        voteParser(){
+            /* Da implementare */
+        }
+    },
     created(){
         
     }
@@ -28,7 +33,7 @@ export default {
         <li class="d-none">{{ movieInfo.title }}</li>
         <li class="d-none">{{ movieInfo.original_title }}</li>
         <li class="d-none">{{ movieInfo.original_language }}</li>
-        <li class="d-none">{{ movieInfo.vote_average }}</li>
+        <li class="d-none">{{ movieInfo.vote_average /* Passare a voteParaser per formattare */ }}</li>
     </ul>
 
 </template>
@@ -37,7 +42,7 @@ export default {
 
 ul{
     width: calc(100% / 5 - .9375rem);
-    margin: .3125rem .1875rem;  
+    margin: .9375rem .1875rem;  
     padding: 0;
     list-style: none;
 }

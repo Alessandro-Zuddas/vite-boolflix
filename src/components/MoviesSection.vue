@@ -20,11 +20,7 @@ export default {
 
 <template>
 
-    <div class="px-4">
-        <h3 class="py-2">Film</h3>
-    </div>
-
-    <div class="container-fluid d-flex px-3">
+    <div class="container-fluid d-flex px-3 justify-content-between text-center flex-wrap">
 
         <MovieCard v-for="movie in this.store.movies"
             :movieInfo = movie />
@@ -35,9 +31,5 @@ export default {
 
 <style scoped>
 
-.container-fluid{
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
 
 </style>

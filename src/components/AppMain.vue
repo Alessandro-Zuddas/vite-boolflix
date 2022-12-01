@@ -22,10 +22,12 @@ export default {
 <template>
 
     <section class="mt-3">
+        <h3 class="py-2">Film</h3>
         <MoviesSection/>
     </section>
     
     <section class="mt-3">
+        <h3 class="py-2">Serie TV</h3>
         <SeriesSection/>
     </section>
 
@@ -33,6 +35,8 @@ export default {
 
 <style scoped>
 
-
+h3{
+    padding-left: 2.1875rem;
+}
 
 </style>
