@@ -48,7 +48,11 @@ export default {
         <li class="show-infos">
             <CountryFlag :country="parseFlag(showInfo.original_language)" size='normal'/>
         </li>
-        <li class="show-infos">{{voteParser /*Da finire*/ }}</li>
+        <li class="show-infos">
+            {{voteParser /*Da finire*/ }}
+            <font-awesome-icon v-for="n in voteParser" class="full-star" icon="fa-solid fa-star" />
+            <font-awesome-icon v-for="n in (5 - voteParser)" icon="fa-regular fa-star" />
+        </li>
         <div class="overview-container">
             <strong>Overview: <br> </strong>
             <small v-show="showInfo.overview">{{ showInfo.overview }}</small>
@@ -83,6 +87,10 @@ ul{
     height: 100%;
     padding: .3125rem .3125rem;
     overflow-y: auto;
+}
+
+.full-star{
+    color: yellow;
 }
 
 ul:hover{
