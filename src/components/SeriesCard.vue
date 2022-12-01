@@ -42,7 +42,10 @@ export default {
 <template>
 
     <ul>
-        <li class="poster-image"><img :src="`https://image.tmdb.org/t/p/w342${showInfo.poster_path}`" :alt="showInfo.name"></li>
+        <li class="poster-image">
+            <img v-show="showInfo.poster_path" :src="`https://image.tmdb.org/t/p/w342${showInfo.poster_path}`" :alt="showInfo.name">
+            <img v-show="!showInfo.poster_path" src="https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg" :alt="showInfo.name">
+        </li>
         <li class="show-infos">{{ showInfo.name}}</li>
         <li class="show-infos">{{ showInfo.original_name }}</li>
         <li class="show-infos">
@@ -70,7 +73,7 @@ ul{
     flex-direction: column;
     align-items: flex-start;
     width: calc(100% / 5 - .9375rem);
-    max-height: 21.875rem;
+    height: 21.875rem;
     margin: .9375rem .1875rem;  
     padding: 0; 
     color: white;

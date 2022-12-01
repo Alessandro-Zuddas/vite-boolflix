@@ -42,7 +42,10 @@ export default {
 <template>
 
     <ul>
-        <li class="poster-image"><img :src="`https://image.tmdb.org/t/p/w342${movieInfo.poster_path}`" :alt="movieInfo.title"></li>
+        <li class="poster-image">
+            <img v-show="movieInfo.poster_path" :src="`https://image.tmdb.org/t/p/w342${movieInfo.poster_path}`" :alt="movieInfo.title">
+            <img v-show="!movieInfo.poster_path" src="https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg" :alt="movieInfo.title">
+        </li>
         <li class="movie-infos">{{ movieInfo.title }}</li>
         <li class="movie-infos">{{ movieInfo.original_title }}</li>
         <li class="movie-infos">
@@ -69,7 +72,7 @@ ul{
     flex-direction: column;
     align-items: flex-start;
     width: calc(100% / 5 - .9375rem);
-    max-height: 21.875rem;
+    height: 21.875rem;
     margin: .9375rem .1875rem;
     padding: 0;  
     color: white;
