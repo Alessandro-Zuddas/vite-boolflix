@@ -48,7 +48,11 @@ export default {
         <li class="movie-infos">
             <CountryFlag :country="parseFlag(movieInfo.original_language)" size='normal'/>
         </li>
-        <li class="movie-infos">{{ voteParser /*Da finire*/ }}</li>
+        <li class="movie-infos">
+            {{ voteParser /*Da finire*/ }}
+            <font-awesome-icon v-for="n in voteParser" class="full-star" icon="fa-solid fa-star" />
+            <font-awesome-icon v-for="n in (5 - voteParser)" icon="fa-regular fa-star" />
+        </li>
         <div class="overview-container">
             <strong>Overview: <br> </strong>
             <small v-show="movieInfo.overview">{{ movieInfo.overview }}</small>
@@ -82,6 +86,10 @@ ul{
     height: 100%;
     padding: .3125rem .3125rem;
     overflow-y: auto;
+}
+
+.full-star{
+    color: yellow;
 }
 
 ul:hover{
