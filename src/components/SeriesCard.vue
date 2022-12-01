@@ -50,7 +50,7 @@ ul{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: calc(100% / 6 - .9375rem);
+    width: calc(100% / 5 - .9375rem);
     max-height: 21.875rem;
     margin: .9375rem .1875rem;  
     padding: 0; 
@@ -89,7 +89,7 @@ ul:hover{
 } 
 
 img{
-    max-width: 18.75rem;
+    width: 18.75rem;
     max-height: 21.875rem;
 }
 

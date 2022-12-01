@@ -29,9 +29,9 @@ export default {
       <!-- Film or Series filter -->
       <label> Choose category:
         <select class="mx-2" name="category-select" id="category-select" v-model="store.categorySelected">
-          <option value="all">All</option>
-          <option value="movie">Movies</option>
-          <option value="tv">TV Series</option>
+          <option value="all">Tutti</option>
+          <option value="movie">Film</option>
+          <option value="tv">Serie TV</option>
         </select>
       </label>
       <!-- /Film or Series filter -->
