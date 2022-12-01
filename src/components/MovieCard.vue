@@ -21,7 +21,7 @@ export default {
         }
     },
     created(){
-
+        
     }
 }
 </script>
@@ -36,7 +36,8 @@ export default {
         <li class="movie-infos">{{ voteParser /*Da finire*/ }}</li>
         <div class="overview-container">
             <strong>Overview: <br> </strong>
-            <small>{{ movieInfo.overview }}</small>
+            <small v-show="movieInfo.overview">{{ movieInfo.overview }}</small>
+            <small v-show="!movieInfo.overview">Trama non disponibile</small>
         </div>
     </ul>
 
@@ -61,6 +62,8 @@ ul{
 }
 
 .overview-container{
+    display: none;
+    width: 100%;
     height: 100%;
     padding: .3125rem .3125rem;
     overflow-y: auto;
@@ -81,6 +84,10 @@ ul:hover{
     .movie-infos{
         display: block;
         padding: .625rem .625rem;
+    }
+
+    .overview-container{
+        display: block;
     }
 }   
 

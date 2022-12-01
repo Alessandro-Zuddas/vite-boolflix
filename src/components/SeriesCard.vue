@@ -36,7 +36,8 @@ export default {
         <li class="show-infos">{{voteParser /*Da finire*/ }}</li>
         <div class="overview-container">
             <strong>Overview: <br> </strong>
-            <small>{{ showInfo.overview }}</small>
+            <small v-show="showInfo.overview">{{ showInfo.overview }}</small>
+            <small v-show="!showInfo.overview">Trama non disponibile</small>
         </div>
     </ul>
 
@@ -62,6 +63,8 @@ ul{
 }
 
 .overview-container{
+    display: none;
+    width: 100%;
     height: 100%;
     padding: .3125rem .3125rem;
     overflow-y: auto;
@@ -77,6 +80,10 @@ ul:hover{
 
     .show-infos{
         padding: .625rem .625rem;
+        display: block;
+    }
+
+    .overview-container{
         display: block;
     }
 } 
