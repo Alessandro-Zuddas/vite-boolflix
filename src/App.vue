@@ -50,9 +50,14 @@ export default {
 
     // Richiesta all input dell'utente
     onSearch(){
-      // Richiesta per Film e Serie TV con dati inseriti dall'utente
-      this.searchRequest("movie", `${this.store.searchText}`);
-      this.searchRequest("tv", `${this.store.searchText}`);
+      if(store.categorySelected === "all"){
+        // Richiesta per Film && Serie TV con dati inseriti dall'utente
+        this.searchRequest("movie", `${this.store.searchText}`);
+        this.searchRequest("tv", `${this.store.searchText}`);
+      }else{
+        // Richiesta per Film || Serie TV
+        this.searchRequest(`${this.store.categorySelected}`, `${this.store.searchText}`);
+      }
     }
   }
 }

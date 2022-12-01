@@ -17,11 +17,11 @@ export default {
     },
     computed: {
         voteParser(){
-            /* Da implementare */
+            return Math.ceil(this.movieInfo.vote_average / 2);  //Da finire
         }
     },
     created(){
-        
+
     }
 }
 </script>
@@ -33,7 +33,7 @@ export default {
         <li class="d-none">{{ movieInfo.title }}</li>
         <li class="d-none">{{ movieInfo.original_title }}</li>
         <li class="d-none">{{ movieInfo.original_language }}</li>
-        <li class="d-none">{{ movieInfo.vote_average /* Passare a voteParaser per formattare */ }}</li>
+        <li class="d-none">{{ movieInfo.vote_average /*Da finire*/ }}</li>
     </ul>
 
 </template>

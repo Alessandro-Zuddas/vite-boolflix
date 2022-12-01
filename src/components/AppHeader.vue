@@ -10,6 +10,11 @@ export default {
     return {
       store,
     }
+  },
+  methods: {
+    onSelectChange(){
+      console.log(this.store.categorySelected)
+    }
   }
 }
 </script>
@@ -23,6 +28,15 @@ export default {
 
     <!-- Search bar -->
     <form class="d-flex" @submit.prevent="$emit(`onSearch`)">
+      <!-- Film or Series filter -->
+      <label> Choose category:
+        <select class="mx-2" name="category-select" id="category-select"  @change="onSelectChange" v-model="store.categorySelected">
+          <option value="all">All</option>
+          <option value="movie">Movies</option>
+          <option value="tv">TV Series</option>
+        </select>
+      </label>
+      <!-- /Film or Series filter -->
       <button type="submit">Cerca</button>
       <input type="text" v-model="store.searchText" required>
     </form>
@@ -33,7 +47,7 @@ export default {
 
 <style scoped>
 
-h1{
+h1,label{
   color: white;
 }
 
