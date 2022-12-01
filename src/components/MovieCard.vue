@@ -1,6 +1,7 @@
 <script>
 
 import { store } from "../store.js"
+import CountryFlag from 'vue-country-flag-next'
 
 export default {
 
@@ -15,9 +16,21 @@ export default {
             store,
         }
     },
+    components: {
+        CountryFlag,
+    },
     computed: {
         voteParser(){
             return Math.ceil(this.movieInfo.vote_average / 2);  //Da finire
+        }
+    },
+    methods: {
+        parseFlag(lang){
+            if(lang === "en"){
+                return "us";
+            }else{
+                return lang;
+            }
         }
     },
     created(){
@@ -32,7 +45,9 @@ export default {
         <li class="poster-image"><img :src="`https://image.tmdb.org/t/p/w342${movieInfo.poster_path}`" :alt="movieInfo.title"></li>
         <li class="movie-infos">{{ movieInfo.title }}</li>
         <li class="movie-infos">{{ movieInfo.original_title }}</li>
-        <li class="movie-infos">{{ movieInfo.original_language }}</li>
+        <li class="movie-infos">
+            <CountryFlag :country="parseFlag(movieInfo.original_language)" size='normal'/>
+        </li>
         <li class="movie-infos">{{ voteParser /*Da finire*/ }}</li>
         <div class="overview-container">
             <strong>Overview: <br> </strong>
