@@ -12,9 +12,7 @@ export default {
     }
   },
   methods: {
-    onSelectChange(){
-      console.log(this.store.categorySelected)
-    }
+
   }
 }
 </script>
@@ -30,7 +28,7 @@ export default {
     <form class="d-flex" @submit.prevent="$emit(`onSearch`)">
       <!-- Film or Series filter -->
       <label> Choose category:
-        <select class="mx-2" name="category-select" id="category-select"  @change="onSelectChange" v-model="store.categorySelected">
+        <select class="mx-2" name="category-select" id="category-select" v-model="store.categorySelected">
           <option value="all">All</option>
           <option value="movie">Movies</option>
           <option value="tv">TV Series</option>
