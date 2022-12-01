@@ -23,11 +23,12 @@ export default {
 
 <template>
 
-    <ul class="px-4">
-        <li>{{ showInfo.name}}</li>
-        <li>{{ showInfo.original_name }}</li>
-        <li>{{ showInfo.original_language }}</li>
-        <li>{{ showInfo.vote_average }}</li>
+    <ul>
+        <li><img :src="`https://image.tmdb.org/t/p/w342${showInfo.poster_path}`" :alt="showInfo.name"></li>
+        <li class="d-none">{{ showInfo.name}}</li>
+        <li class="d-none">{{ showInfo.original_name }}</li>
+        <li class="d-none">{{ showInfo.original_language }}</li>
+        <li class="d-none">{{ showInfo.vote_average }}</li>
     </ul>
 
 </template>
@@ -36,9 +37,15 @@ export default {
 
 
 ul{
-    width: calc(100% / 6 - 1.875rem);
-    margin: .3125rem .3125rem;
-    border: .0625rem solid black;
+    width: calc(100% / 5 - .9375rem);
+    margin: .3125rem .1875rem;  
+    padding: 0;
+    list-style: none;
+}
+
+img{
+    max-width: 15.625rem;
+    max-height: 21.875rem;
 }
 
 </style>

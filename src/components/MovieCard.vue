@@ -24,10 +24,11 @@ export default {
 <template>
 
     <ul>
-        <li>{{ movieInfo.title }}</li>
-        <li>{{ movieInfo.original_title }}</li>
-        <li>{{ movieInfo.original_language }}</li>
-        <li>{{ movieInfo.vote_average }}</li>
+        <li><img :src="`https://image.tmdb.org/t/p/w342${movieInfo.poster_path}`" :alt="movieInfo.title"></li>
+        <li class="d-none">{{ movieInfo.title }}</li>
+        <li class="d-none">{{ movieInfo.original_title }}</li>
+        <li class="d-none">{{ movieInfo.original_language }}</li>
+        <li class="d-none">{{ movieInfo.vote_average }}</li>
     </ul>
 
 </template>
@@ -35,9 +36,15 @@ export default {
 <style scoped>
 
 ul{
-    width: calc(100% / 6 - 1.875rem);
-    margin: .3125rem .3125rem;
-    border: .0625rem solid black;
+    width: calc(100% / 5 - .9375rem);
+    margin: .3125rem .1875rem;  
+    padding: 0;
+    list-style: none;
+}
+
+img{
+    max-width: 15.625rem;
+    max-height: 21.875rem;
 }
 
 </style>
