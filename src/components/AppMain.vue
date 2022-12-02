@@ -24,18 +24,18 @@ export default {
 <template>
 
     <section  v-if="(store.categorySelected === `movie`)">
-        <h1 class="pb-2 pt-3">Film:</h1>
+        <h2 class="pb-2 pt-3">Risultati filtrati per: Film</h2>
         <MoviesSection/>
     </section>
     
     <section  v-if="(store.categorySelected === `tv`)">
-        <h1 class="pb-2 pt-3">Serie TV:</h1>
+        <h2 class="pb-2 pt-3">Risultati filtrati per: Serie TV</h2>
         <SeriesSection/>
     </section>
 
     <div v-if="(store.categorySelected === `all`)">
         <section >
-            <h1 class="pb-2 pt-3">I tuoi risultati:</h1>
+            <h2 class="pb-2 pt-3">Risultati filtrati per: Tutti</h2>
             <MoviesSection/>
             <SeriesSection/>
         </section>
@@ -45,12 +45,13 @@ export default {
 
 <style scoped>
 
-h1{
+h2{
     padding-left: 1.5625rem;
 }
 
 section{
     color: white;
+    margin-top: 5.9375rem;
     background-color: #141414;
 }
 
