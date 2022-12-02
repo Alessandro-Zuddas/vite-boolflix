@@ -56,8 +56,8 @@ export default {
             <font-awesome-icon v-for="n in voteParser" class="full-star" icon="fa-solid fa-star" />
             <font-awesome-icon v-for="n in (5 - voteParser)" icon="fa-regular fa-star" />
         </li>
+        <strong class="overview-title">Overview: <br> </strong>
         <div class="overview-container">
-            <strong>Overview: <br> </strong>
             <small v-show="showInfo.overview">{{ showInfo.overview }}</small>
             <small v-show="!showInfo.overview">Trama non disponibile</small>
         </div>
@@ -93,6 +93,11 @@ ul{
     overflow-y: auto;
 }
 
+.overview-title{
+    display: none;
+    padding: .625rem .625rem;
+}
+
 .full-star{
     color: yellow;
 }
@@ -111,6 +116,10 @@ ul:hover{
     }
 
     .overview-container{
+        display: block;
+    }
+
+    .overview-title{
         display: block;
     }
 } 

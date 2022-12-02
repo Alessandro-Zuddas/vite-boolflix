@@ -24,18 +24,18 @@ export default {
 <template>
 
     <section  v-if="(store.categorySelected === `movie`)">
-        <h1 class="py-2">Film:</h1>
+        <h1 class="pb-2 pt-3">Film:</h1>
         <MoviesSection/>
     </section>
     
     <section  v-if="(store.categorySelected === `tv`)">
-        <h1 class="py-2">Serie TV:</h1>
+        <h1 class="pb-2 pt-3">Serie TV:</h1>
         <SeriesSection/>
     </section>
 
     <div v-if="(store.categorySelected === `all`)">
         <section >
-            <h1 class="py-2">I tuoi risultati:</h1>
+            <h1 class="pb-2 pt-3">I tuoi risultati:</h1>
             <MoviesSection/>
             <SeriesSection/>
         </section>
