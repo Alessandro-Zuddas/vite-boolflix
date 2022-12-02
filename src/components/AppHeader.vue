@@ -14,7 +14,48 @@ export default {
   methods: {
     onLogoClick(){
       window.location.reload();
-    }
+    },
+    onHomeClick(){
+      
+      this.store.homeActive = true;
+      this.store.moviesActive = false;
+      this.store.seriesActive = false;
+
+      this.store.navigationLinks[1].classList.remove("active");
+      this.store.navigationLinks[2].classList.remove("active");
+      this.store.navigationLinks[0].classList.add("active");
+
+    },
+    onMoviesClick(){
+      
+      this.store.homeActive = false;
+      this.store.seriesActive = false;
+      this.store.moviesActive = true;
+
+      this.store.navigationLinks[0].classList.remove("active");
+      this.store.navigationLinks[2].classList.remove("active");
+      this.store.navigationLinks[1].classList.add("active");
+
+    },
+    onSeriesClick(){
+      
+      this.store.homeActive = false;
+      this.store.moviesActive = false;
+      this.store.seriesActive = true;
+
+      this.store.navigationLinks[0].classList.remove("active");
+      this.store.navigationLinks[1].classList.remove("active");
+      this.store.navigationLinks[2].classList.add("active");
+
+    },
+  },
+  mounted(){
+    
+    this.store.navigationLinks.push(document.getElementById("home-link"));
+    this.store.navigationLinks.push(document.getElementById("movies-link"));
+    this.store.navigationLinks.push(document.getElementById("series-link"));
+    console.log(this.store.navigationLinks)
+
   }
 }
 </script>
@@ -30,9 +71,15 @@ export default {
       <!-- /Logo Boolflix -->
       <!-- Navigazione -->
       <nav class="mx-4">
-        <a class="header-link" href="#">Home</a>
-        <a class="header-link" href="#">Film</a>
-        <a href="#">Serie TV</a>
+        <a id="home-link" class="header-link active" href="#" @click="onHomeClick">
+          Home
+        </a>
+        <a id="movies-link" class="header-link" href="#" @click="onMoviesClick">
+          Film
+        </a>
+        <a id="series-link" href="#" @click="onSeriesClick">
+          Serie TV
+        </a>
       </nav>
       <!-- /Navigazione -->
     </div>
@@ -89,16 +136,23 @@ a:hover{
 }
 
 .header-link{
-  padding-right: .9375rem;
+  margin-right: .9375rem;
+  padding-bottom: .3125rem;
+}
+
+.active{
+  color: #ec0206;
+  border-bottom: 3px solid #ec0206;
 }
 
 #category-select{
   border-radius: .625rem;
 }
 
+
 .search-btn{
   align-self: center;
-  border-radius: .625rem;
+  border: none;
   padding: .1875rem .5rem;
   color: white;
   background-color: #ec0206;
@@ -106,7 +160,7 @@ a:hover{
 
 .search-input{
   align-self: center;
-  border-radius: .625rem;
+  border: none;
   padding: .1875rem .5rem;
 }
 

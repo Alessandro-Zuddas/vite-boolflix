@@ -37,12 +37,10 @@ export default {
         if(typology === "movie"){
 
           this.store.movies = result.data.results;
-          console.log(this.store.movies)
 
         }else if(typology === "tv"){
 
           this.store.series = result.data.results;
-          console.log(this.store.series)
           
         }
       })

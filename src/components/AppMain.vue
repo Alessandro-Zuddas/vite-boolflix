@@ -1,7 +1,8 @@
 <script>
 
-import MoviesSection from './MoviesSection.vue';
-import SeriesSection from './SeriesSection.vue';
+import MainHome from './MainHome.vue';
+import MainMovies from './MainMovies.vue';
+import MainSeries from './MainSeries.vue';
 
 import { store } from "../store.js"
 
@@ -10,8 +11,9 @@ export default {
     name: "AppMain",
 
     components: {
-        MoviesSection,
-        SeriesSection,
+        MainHome,
+        MainMovies,
+        MainSeries,
     },
     data() {
         return {
@@ -23,36 +25,14 @@ export default {
 
 <template>
 
-    <section  v-if="(store.categorySelected === `movie`)">
-        <h2 class="pb-2 pt-3">Risultati filtrati per: Film</h2>
-        <MoviesSection/>
-    </section>
-    
-    <section  v-if="(store.categorySelected === `tv`)">
-        <h2 class="pb-2 pt-3">Risultati filtrati per: Serie TV</h2>
-        <SeriesSection/>
-    </section>
-
-    <div v-if="(store.categorySelected === `all`)">
-        <section >
-            <h2 class="pb-2 pt-3">Risultati filtrati per: Tutti</h2>
-            <MoviesSection/>
-            <SeriesSection/>
-        </section>
-    </div>
+    <MainHome v-if="store.homeActive"/>
+    <MainMovies v-if="store.moviesActive"/>
+    <MainSeries v-if="store.seriesActive"/>
 
 </template>
 
 <style scoped>
 
-h2{
-    padding-left: 1.5625rem;
-}
 
-section{
-    color: white;
-    margin-top: 5.9375rem;
-    background-color: #141414;
-}
 
 </style>

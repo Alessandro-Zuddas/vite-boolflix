@@ -5,4 +5,8 @@ export const store = reactive({
     series: [],
     searchText: "",
     categorySelected: "all",
+    navigationLinks: [],
+    homeActive: true,
+    moviesActive: false,
+    seriesActive: false,
 })
