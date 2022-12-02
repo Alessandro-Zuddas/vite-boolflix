@@ -84,7 +84,12 @@ ul{
     display: none;
 }
 
+.overview-text{
+    margin-top: .625rem;
+}
+
 .overview-container{
+    position: relative;
     display: none;
     width: 100%;
     height: 100%;
