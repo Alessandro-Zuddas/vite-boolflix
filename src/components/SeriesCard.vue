@@ -52,7 +52,7 @@ export default {
             <CountryFlag :country="parseFlag(showInfo.original_language)" size='normal'/>
         </li>
         <li class="show-infos">
-            {{voteParser /*Da finire*/ }}
+            {{ voteParser }}
             <font-awesome-icon v-for="n in voteParser" class="full-star" icon="fa-solid fa-star" />
             <font-awesome-icon v-for="n in (5 - voteParser)" icon="fa-regular fa-star" />
         </li>
@@ -73,9 +73,10 @@ ul{
     flex-direction: column;
     align-items: flex-start;
     width: calc(100% / 5 - .9375rem);
-    height: 21.875rem;
+    max-height: 26.5625rem;
     margin: .9375rem .1875rem;  
     padding: 0; 
+    border: .0313rem solid white;
     color: white;
     list-style: none;
 }
@@ -115,8 +116,9 @@ ul:hover{
 } 
 
 img{
-    width: 18.75rem;
-    max-height: 21.875rem;
+    display: block;
+    width: 22.3125rem;
+    max-height: 26.4375rem;
 }
 
 </style>

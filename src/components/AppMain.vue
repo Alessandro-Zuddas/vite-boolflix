@@ -23,18 +23,18 @@ export default {
 
 <template>
 
-    <section class="mt-3" v-if="(store.categorySelected === `movie`)">
+    <section  v-if="(store.categorySelected === `movie`)">
         <h1 class="py-2">Film:</h1>
         <MoviesSection/>
     </section>
     
-    <section class="mt-3" v-if="(store.categorySelected === `tv`)">
+    <section  v-if="(store.categorySelected === `tv`)">
         <h1 class="py-2">Serie TV:</h1>
         <SeriesSection/>
     </section>
 
     <div v-if="(store.categorySelected === `all`)">
-        <section class="mt-3">
+        <section >
             <h1 class="py-2">I tuoi risultati:</h1>
             <MoviesSection/>
             <SeriesSection/>
@@ -47,6 +47,11 @@ export default {
 
 h1{
     padding-left: 1.5625rem;
+}
+
+section{
+    color: white;
+    background-color: #141414;
 }
 
 </style>
