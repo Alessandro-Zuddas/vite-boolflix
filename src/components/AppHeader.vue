@@ -12,7 +12,9 @@ export default {
     }
   },
   methods: {
-
+    onLogoClick(){
+      window.location.reload();
+    }
   }
 }
 </script>
@@ -21,7 +23,9 @@ export default {
 
   <div class="container-fluid py-2 d-flex justify-content-between align-items-center">
     <!-- Logo Boolflix -->
-    <img src="https://image.tmdb.org/t/p/w342/wwemzKWzjKYJFfCeiB57q3r4Bcm.png" alt="Netflix Logo">
+    <a @click="onLogoClick()" href="#">
+      <img src="https://image.tmdb.org/t/p/w342/wwemzKWzjKYJFfCeiB57q3r4Bcm.png" alt="Netflix Logo">
+    </a>
     <!-- /Logo Boolflix -->
 
     <!-- Search bar -->
