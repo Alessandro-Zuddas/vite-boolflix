@@ -42,6 +42,7 @@ export default {
 
           this.store.series = result.data.results;
           
+          
         }
       })
     },

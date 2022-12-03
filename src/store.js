@@ -9,4 +9,6 @@ export const store = reactive({
     homeActive: true,
     moviesActive: false,
     seriesActive: false,
+    popularMovies: [],
+    popularSeries: [],
 })

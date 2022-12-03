@@ -21,6 +21,11 @@ export default {
 
 <template>
 
+    <section>
+        <h2 class="pb-2 pt-3">Più popolari questa settimana:</h2>
+        <!-- Da implementare -->
+    </section>
+
     <section v-if="(store.series)">
         <h2 class="pb-2 pt-3">Sezione Serie</h2>
         <SeriesSection/>
