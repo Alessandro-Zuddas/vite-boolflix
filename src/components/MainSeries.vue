@@ -21,14 +21,22 @@ export default {
 
 <template>
 
-    <section>
+    <section v-if="(store.series)">
         <h2 class="pb-2 pt-3">Sezione Serie</h2>
         <SeriesSection/>
+    </section>
+
+    <section v-if="(store.series.length <= 0)">
+        <h1 class="text-center my-5">Nessun risultato trovato!</h1>
     </section>
 
 </template>
 
 <style scoped>
+
+h1{
+    color: white;
+}
 
 h2{
     padding-left: 1.5625rem;

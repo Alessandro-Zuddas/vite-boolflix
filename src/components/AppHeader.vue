@@ -87,7 +87,7 @@ export default {
     <!-- Search bar -->
     <form class="d-flex" @submit.prevent="$emit(`onSearch`)">
       <!-- Film or Series filter -->
-      <label class="d-flex flex-column mx-4">Seleziona tipologia:
+      <label v-if="store.homeActive" class="d-flex flex-column mx-4">Seleziona tipologia:
         <select class="mx-2 my-2" name="category-select" id="category-select" v-model="store.categorySelected">
           <option value="all">Tutti</option>
           <option value="movie">Film</option>
@@ -96,7 +96,11 @@ export default {
       </label>
       <!-- /Film or Series filter -->
       <button class="search-btn" type="submit">Cerca</button>
-      <input class="search-input" type="text" v-model="store.searchText" placeholder="Cerca Film e Serie TV" 
+      <input v-if="store.homeActive" class="search-input" type="text" v-model="store.searchText" placeholder="Cerca Film e Serie TV" 
+      required>
+      <input v-if="store.moviesActive" class="search-input" type="text" v-model="store.searchText" placeholder="Cerca i migliori Film" 
+      required>
+      <input v-if="store.seriesActive" class="search-input" type="text" v-model="store.searchText" placeholder="Cerca le migliori Serie" 
       required>
     </form>
     <!-- /Search bar -->
